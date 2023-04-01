@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="init()">
+    <main>
+        <div id="welcomeScreen">
+            <h2>Guess the random number between 1-100</h2>
+            <img src="./images/dart-38220.png" alt="Error Loading image">
+
+            <section class="eventSection">
+                <p>Select the Difficulty</p>
+                <div class="button-wrapper">
+                    <button class="button-90" onclick="EasyMode()" role="button">Easy Mode: 10 Attempts</button>
+                    <button class="button-90" onclick="HardMode()" role="button">Hard Mode: 5 Attempts</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Actual Game area -->
+        <div id="game-area">
+            <div id="new-game-button">
+                <button class="button-90" onclick="newGameBegin()" id="newGame" role="button">NEW GAME</button>
+            </div>
+            <section>
+                <h3 id="u1">YOUR GUESS</h3>
+                <input type="number" onchange="mainLogic()" id="inputBox" min="1" max="100" placeholder="Enter Your Number">
+            </section>
+
+            <section class="stats">
+                <div class="info">
+                    <p>Number of previous attempts</p>
+                    <span id="attempts">0</span>
+                </div>
+                <div class="info">
+                    <p>Number of previous guesses</p>
+                    <span id="guess">0</span>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
